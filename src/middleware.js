@@ -27,24 +27,24 @@ export async function middleware(request) {
     }
   )
 
-  // IMPORTANT: DO NOT USE supabase.auth.getSession()!
-  // It relies on the token in the cookie without validating it.
+  // IMPORTANTE: NÃO USE supabase.auth.getSession()!
+  // Ele confia no token no cookie sem validá-lo.
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Protect all routes except /login and public assets
+  // Proteger todas as rotas exceto /login e assets públicos
   const isLoginPage = request.nextUrl.pathname.startsWith('/login')
   const isPublicRoute = request.nextUrl.pathname.startsWith('/_next') || request.nextUrl.pathname.match(/\.(ico|png|jpg|jpeg|svg)$/)
 
   if (!isPublicRoute) {
     if (!user && !isLoginPage) {
-      // no user, potentially respond by redirecting the user to the login page
+      // sem usuário, potencialmente responder redirecionando o usuário para a página de login
       const url = request.nextUrl.clone()
       url.pathname = '/login'
       return NextResponse.redirect(url)
     }
 
     if (user && isLoginPage) {
-      // if user is already logged in, redirect to home
+      // se o usuário já estiver logado, redirecionar para a home
       const url = request.nextUrl.clone()
       url.pathname = '/'
       return NextResponse.redirect(url)
@@ -57,11 +57,11 @@ export async function middleware(request) {
 export const config = {
   matcher: [
     /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * Feel free to modify this pattern to include more paths.
+     * Corresponder a todos os caminhos de requisição exceto aqueles que começam com:
+     * - _next/static (arquivos estáticos)
+     * - _next/image (arquivos de otimização de imagem)
+     * - favicon.ico (arquivo de favicon)
+     * Sinta-se livre para modificar este padrão para incluir mais caminhos.
      */
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],

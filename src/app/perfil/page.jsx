@@ -119,9 +119,11 @@ export default function Perfil() {
         <div className="perfil-card">
           <div className="perfil-header-bg"></div>
           <div className="perfil-info">
-            <div className="perfil-avatar-large">
-              {nomeExibicao.charAt(0).toUpperCase()}
-            </div>
+            <img
+              className="perfil-avatar-large"
+              src={`https://ui-avatars.com/api/?name=${nomeExibicao}&background=random&size=100`}
+              alt={nomeExibicao}
+            />
             <h2 className="perfil-nome">{nomeExibicao}</h2>
             
             {isEditing ? (

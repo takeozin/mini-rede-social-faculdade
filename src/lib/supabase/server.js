@@ -18,9 +18,9 @@ export async function createClient() {
               cookieStore.set(name, value, options)
             )
           } catch {
-            // The `setAll` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
+            // O método `setAll` foi chamado de um Server Component.
+            // Isso pode ser ignorado se você tiver um middleware atualizando
+            // as sessões de usuário.
           }
         },
       },

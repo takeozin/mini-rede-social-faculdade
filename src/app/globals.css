@@ -31,7 +31,7 @@ a {
   text-decoration: none;
 }
 
-/* Layout */
+/* Layout Geral */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -96,7 +96,7 @@ a {
   width: 100%;
 }
 
-/* Feed & Posts */
+/* Feed e Posts */
 .feed-container {
   display: flex;
   flex-direction: column;
@@ -330,7 +330,7 @@ a {
   }
 }
 
-/* Profile Posts Section */
+/* Seção de Posts do Perfil */
 .perfil-posts-section {
   width: 100%;
 }
@@ -344,7 +344,7 @@ a {
   border-bottom: 1px solid var(--border-color);
 }
 
-/* User Menu */
+/* Menu do Usuário */
 .user-menu {
   display: flex;
   align-items: center;
@@ -367,7 +367,7 @@ a {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Login Page */
+/* Página de Login */
 .login-container {
   display: flex;
   justify-content: center;
@@ -445,7 +445,7 @@ a {
   margin-bottom: 2rem;
 }
 
-/* Post Actions (Likes, Comments) */
+/* Ações do Post (Curtidas, Comentários) */
 .post-actions {
   display: flex;
   gap: 1rem;
@@ -471,7 +471,7 @@ a {
   color: #ef4444;
 }
 
-/* Post Author Link */
+/* Link do Autor do Post */
 .post-author-link {
   display: flex;
   align-items: center;
@@ -550,7 +550,7 @@ a {
   font-style: italic;
 }
 
-/* Delete Post Button */
+/* Botão de Excluir Post */
 .post-header {
   position: relative;
 }
@@ -595,7 +595,7 @@ a {
   }
 }
 
-/* Delete Confirmation Modal */
+/* Modal de Confirmação de Exclusão */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -676,7 +676,7 @@ a {
   }
 }
 
-/* Search Bar */
+/* Barra de Busca */
 .search-container {
   position: relative;
   width: 100%;

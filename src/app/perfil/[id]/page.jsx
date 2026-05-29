@@ -15,7 +15,7 @@ export default function PerfilUsuario({ params }) {
   const [userPosts, setUserPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Bio editing (only for own profile)
+  // Edição de bio (apenas para o próprio perfil)
   const [isEditing, setIsEditing] = useState(false);
   const [bioInput, setBioInput] = useState("");
   const [isSaving, setIsSaving] = useState(false);

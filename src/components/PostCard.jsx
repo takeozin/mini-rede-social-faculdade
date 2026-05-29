@@ -39,12 +39,12 @@ export default function PostCard({ postId, postUserId, autor, conteudo, data, in
     if (!user) return alert("Faça login para curtir!");
     
     if (isLiked) {
-      // Remove like
+      // Remover curtida
       await supabase.from('likes').delete().eq('post_id', postId).eq('user_id', user.id);
       setLikes(prev => prev - 1);
       setIsLiked(false);
     } else {
-      // Add like
+      // Adicionar curtida
       await supabase.from('likes').insert([{ post_id: postId, user_id: user.id }]);
       setLikes(prev => prev + 1);
       setIsLiked(true);
